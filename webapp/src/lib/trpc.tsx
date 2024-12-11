@@ -1,4 +1,4 @@
-import { TrpcRouter } from '@nik/backend/src/trpc'
+import type { TrpcRouter } from '@nik/backend/src/trpc'
 import { createTRPCReact } from '@trpc/react-query'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { httpBatchLink } from '@trpc/client'
@@ -17,7 +17,7 @@ const queryClient = new QueryClient({
 const trpcClient = trpc.createClient({
   links: [
     httpBatchLink({
-      url: 'http://localhost/trpc'
+      url: 'http://localhost:3000/trpc'
     })
   ]
 })
