@@ -1,13 +1,21 @@
 import { trpc } from '../../lib/trpc'
 
 export const AallIdeasPage = () => {
-  const result = trpc.getIdeas.useQuery()
+  const { data, error, isFetching, isLoading, isError } = trpc.getIdeas.useQuery()
+
+  if (isLoading || isFetching) {
+    return <span>Loading...</span>
+  }
+
+  if (isError) {
+    return <span>Error: {error.message}</span>
+  }
 
   return (
     <div>
-      <h1>Ideas page</h1>
+      <h1>All Ideas</h1>
       <ul>
-        {ideas.map((idea) => {
+        {data?.ideas.map((idea) => {
           return (
             <li key={idea.id}>
               <h2>{idea.name}</h2>
