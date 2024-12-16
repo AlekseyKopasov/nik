@@ -1,7 +1,7 @@
 import { initTRPC } from '@trpc/server'
 
 if (true) console.log(42);
-
+const x:string =1
 const ideas = [
   {
     id: 'idea-id-1',
