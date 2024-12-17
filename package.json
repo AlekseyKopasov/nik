@@ -11,12 +11,11 @@
     "prettify": "pnpm -r --parallel prettify"
   },
   "devDependencies": {
-    "@typescript-eslint/parser": "^8.18.1",
-    "concurrently": "^9.1.0",
-    "eslint": "^9.17.0",
-    "eslint-config-prettier": "^9.1.0",
+    "concurrently": "^8.2.0",
+    "eslint": "^8.47.0",
+    "eslint-config-prettier": "^9.0.0",
     "eslint-config-react-app": "^7.0.1",
-    "eslint-config-standard-with-typescript": "^43.0.1",
+    "eslint-config-standard-with-typescript": "^37.0.0",
     "prettier": "^3.0.2",
     "rimraf": "^5.0.1",
     "ts-node": "^10.9.1",
