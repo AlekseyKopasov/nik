@@ -1,5 +1,5 @@
 import { initTRPC } from '@trpc/server'
-const x:number = '1';
+const x:number = '1sd';
 const ideas = [
   {
     id: 'idea-id-1',
