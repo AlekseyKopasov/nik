@@ -93,6 +93,9 @@ importers:
       '@trpc/server':
         specifier: ^10.37.1
         version: 10.45.2
+      include-media:
+        specifier: ^2.0.0
+        version: 2.0.0
       react:
         specifier: ^18.2.0
         version: 18.3.1
@@ -115,6 +118,12 @@ importers:
       prettier:
         specifier: ^3.0.1
         version: 3.4.2
+      reset-css:
+        specifier: ^5.0.2
+        version: 5.0.2
+      sass:
+        specifier: ^1.66.1
+        version: 1.85.1
       vite:
         specifier: ^6.0.1
         version: 6.2.0(@types/node@20.17.10)(sass@1.85.1)(terser@5.39.0)(yaml@2.7.0)
@@ -2248,6 +2257,9 @@ packages:
     resolution: {integrity: sha512-JmXMZ6wuvDmLiHEml9ykzqO6lwFbof0GG4IkcGaENdCRDDmMVnny7s5HsIgHCbaq0w2MyPhDqkhTUgS2LU2PHA==}
     engines: {node: '>=0.8.19'}
 
+  include-media@2.0.0:
+    resolution: {integrity: sha512-LSJcffPYIZ/Kln0rIi5UhqQbZxElDCMYA4dPC5MI1rkwwjptgEiOicHnzB0MMhMNJver0+4zULb4MKlgDyapZg==}
+
   inflight@1.0.6:
     resolution: {integrity: sha512-k92I/b08q4wvFscXCLvqfsHCrjrF7yiXsQuIVvVE7N82W3+aqpzuUdBbfhWcy/FZR3/4IgflMgKLOsvPDrGCJA==}
     deprecated: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
@@ -2849,6 +2861,9 @@ packages:
   require-directory@2.1.1:
     resolution: {integrity: sha512-fGxEI7+wsG9xrvdjsrlmL22OMTTiHRwAMroiEeMgq8gzoLC/PQr7RsRDSTLUg/bZAZtF+TVIkHc6/4RIKrui+Q==}
     engines: {node: '>=0.10.0'}
+
+  reset-css@5.0.2:
+    resolution: {integrity: sha512-YtgUGSq5z5W0NPSjsBW7ys7rtWa8P8AiE7S6Fg3d1TQCPpAodgYyLuZYlU0AOsLtprk/fC9ormHN/0pAavVIDw==}
 
   resolve-from@4.0.0:
     resolution: {integrity: sha512-pb/MYmXstAkysRFx8piNI1tGFNQIFA3vkE3Gq4EuA1dF6gHp/+vgZqsCGJapvy8N3Q+4o7FwvquPJcnZ7RYy4g==}
@@ -5005,7 +5020,6 @@ snapshots:
   chokidar@4.0.3:
     dependencies:
       readdirp: 4.1.2
-    optional: true
 
   cli-cursor@4.0.0:
     dependencies:
@@ -5849,8 +5863,7 @@ snapshots:
 
   ignore@5.3.2: {}
 
-  immutable@5.0.3:
-    optional: true
+  immutable@5.0.3: {}
 
   import-fresh@3.3.0:
     dependencies:
@@ -5858,6 +5871,8 @@ snapshots:
       resolve-from: 4.0.0
 
   imurmurhash@0.1.4: {}
+
+  include-media@2.0.0: {}
 
   inflight@1.0.6:
     dependencies:
@@ -6370,8 +6385,7 @@ snapshots:
     dependencies:
       picomatch: 2.3.1
 
-  readdirp@4.1.2:
-    optional: true
+  readdirp@4.1.2: {}
 
   reflect.getprototypeof@1.0.8:
     dependencies:
@@ -6419,6 +6433,8 @@ snapshots:
       jsesc: 3.0.2
 
   require-directory@2.1.1: {}
+
+  reset-css@5.0.2: {}
 
   resolve-from@4.0.0: {}
 
@@ -6515,7 +6531,6 @@ snapshots:
       source-map-js: 1.2.1
     optionalDependencies:
       '@parcel/watcher': 2.5.1
-    optional: true
 
   scheduler@0.23.2:
     dependencies:
