@@ -19,9 +19,9 @@ export const AllIdeasPage = () => {
       <ul>
         {data?.ideas.map((idea) => {
           return (
-            <li key={idea.id}>
+            <li key={idea.nick}>
               <h2>
-                <Link to={getViewIdeaRoute({ ideaNick: idea.id })}>{idea.name}</Link>
+                <Link to={getViewIdeaRoute({ ideaNick: idea.nick })}>{idea.name}</Link>
               </h2>
               <p>{idea.description}</p>
             </li>

@@ -1,38 +1,18 @@
 import { initTRPC } from '@trpc/server'
+import _ from 'lodash'
 
-const ideas = [
-  {
-    id: 'idea-id-1',
-    name: 'Idea 1',
-    description: 'Description for idea 1...',
-  },
-  {
-    id: 'idea-id-2',
-    name: 'Idea 2',
-    description: 'Description for idea 2...',
-  },
-  {
-    id: 'idea-id-3',
-    name: 'Idea 3',
-    description: 'Description for idea 3...',
-  },
-  {
-    id: 'idea-id-4',
-    name: 'Idea 4',
-    description: 'Description for idea 4...',
-  },
-  {
-    id: 'idea-id-5',
-    name: 'Idea 5',
-    description: 'Description for idea 5...',
-  },
-]
+const ideas = _.times(100, (i) => ({
+  nick: `cool-idea-nick-${i}`,
+  name: `Idea ${i}`,
+  description: `Description for idea ${i}...`,
+  text: _.times(100, (j) => `<p>Some text ${j} of idea ${i}</p>`).join(''),
+}))
 
 const trpc = initTRPC.create()
 
 export const trpcRouter = trpc.router({
   getIdeas: trpc.procedure.query(() => {
-    return { ideas }
+    return { ideas: ideas.map((idea) => _.pick(idea, ['nick', 'name', 'description'])) }
   }),
 })
 
