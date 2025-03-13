@@ -4,14 +4,10 @@ import { z } from 'zod'
 import { Input } from '../../components/Input'
 import { Segment } from '../../components/Segment'
 import { Textarea } from '../../components/Textarea'
+import { trpc } from '../../lib/trpc'
 
 export const NewIdeaPage = () => {
-  // const [state, setState] = useState({
-  //   name: '',
-  //   nick: '',
-  //   description: '',
-  //   text: '',
-  // })
+  const createIdea = trpc.createIdea.useMutation()
 
   const formik = useFormik({
     initialValues: {
@@ -31,8 +27,8 @@ export const NewIdeaPage = () => {
         text: z.string().min(3, 'Text should be at least 3 characters long'),
       })
     ),
-    onSubmit: (values) => {
-      console.info('submitted', values)
+    onSubmit: async (values) => {
+      await createIdea.mutateAsync(values)
     },
   })
 
