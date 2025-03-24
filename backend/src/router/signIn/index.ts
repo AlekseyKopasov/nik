@@ -1,5 +1,6 @@
 import { trpc } from '../../lib/trpc'
 import { getPasswordHash } from '../../utils/getPasswordHash'
+import { signJWT } from '../../utils/signJWT'
 import { zSignUpTrpcInput } from '../signUp/input'
 
 export const signInTrpcRoute = trpc.procedure.input(zSignUpTrpcInput).mutation(async ({ ctx, input }) => {
@@ -13,5 +14,8 @@ export const signInTrpcRoute = trpc.procedure.input(zSignUpTrpcInput).mutation(a
   if (!user) {
     throw new Error('Invalid nick or password')
   }
-  return true
+
+  const token = signJWT(user.id)
+
+  return { token }
 })
