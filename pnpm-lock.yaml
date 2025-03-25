@@ -116,9 +116,6 @@ importers:
       picocolors:
         specifier: ^1.0.0
         version: 1.1.1
-      prisma:
-        specifier: ^5.2.0
-        version: 5.22.0
       randomstring:
         specifier: ^1.3.0
         version: 1.3.1
@@ -136,7 +133,7 @@ importers:
         version: 1.4.1
       trpc-playground:
         specifier: ^1.0.4
-        version: 1.0.4(@trpc/server@10.45.2)(@types/node@20.17.10)(express@4.21.2)(sass@1.85.1)(terser@5.39.0)(typescript@5.7.2)(zod@3.24.2)
+        version: 1.0.4(@trpc/server@10.45.2)(@types/node@20.17.10)(express@4.21.2)(sass@1.86.0)(terser@5.39.0)(typescript@5.7.2)(zod@3.24.2)
       winston:
         specifier: ^3.10.0
         version: 3.17.0
@@ -186,6 +183,9 @@ importers:
       eslint-plugin-node:
         specifier: ^11.1.0
         version: 11.1.0(eslint@8.57.1)
+      prisma:
+        specifier: ^5.2.0
+        version: 5.22.0
 
   webapp:
     dependencies:
@@ -261,9 +261,6 @@ importers:
       reset-css:
         specifier: ^5.0.2
         version: 5.0.2
-      sass:
-        specifier: ^1.66.1
-        version: 1.85.1
       superjson:
         specifier: ^1.13.1
         version: 1.13.3
@@ -300,10 +297,10 @@ importers:
         version: 1.2.5
       '@vitejs/plugin-legacy':
         specifier: ^4.1.1
-        version: 4.1.1(terser@5.39.0)(vite@4.5.9(@types/node@20.17.10)(sass@1.85.1)(terser@5.39.0))
+        version: 4.1.1(terser@5.39.0)(vite@4.5.9(@types/node@20.17.10)(sass@1.86.0)(terser@5.39.0))
       '@vitejs/plugin-react':
         specifier: ^4.0.3
-        version: 4.3.4(vite@4.5.9(@types/node@20.17.10)(sass@1.85.1)(terser@5.39.0))
+        version: 4.3.4(vite@4.5.9(@types/node@20.17.10)(sass@1.86.0)(terser@5.39.0))
       autoprefixer:
         specifier: ^10.4.16
         version: 10.4.21(postcss@8.5.3)
@@ -313,6 +310,9 @@ importers:
       rollup-plugin-visualizer:
         specifier: ^5.9.2
         version: 5.14.0(rollup@4.34.9)
+      sass:
+        specifier: ^1.86.0
+        version: 1.86.0
       stylelint:
         specifier: ^15.10.3
         version: 15.11.0(typescript@5.7.2)
@@ -324,10 +324,10 @@ importers:
         version: 11.1.0(postcss@8.5.3)(stylelint@15.11.0(typescript@5.7.2))
       vite:
         specifier: ^4.4.9
-        version: 4.5.9(@types/node@20.17.10)(sass@1.85.1)(terser@5.39.0)
+        version: 4.5.9(@types/node@20.17.10)(sass@1.86.0)(terser@5.39.0)
       vite-plugin-svgr:
         specifier: ^3.2.0
-        version: 3.3.0(rollup@4.34.9)(typescript@5.7.2)(vite@4.5.9(@types/node@20.17.10)(sass@1.85.1)(terser@5.39.0))
+        version: 3.3.0(rollup@4.34.9)(typescript@5.7.2)(vite@4.5.9(@types/node@20.17.10)(sass@1.86.0)(terser@5.39.0))
 
 packages:
 
@@ -1313,6 +1313,12 @@ packages:
 
   '@eslint-community/eslint-utils@4.4.1':
     resolution: {integrity: sha512-s3O3waFUrMV8P/XaF/+ZTp1X9XBZW1a4B97ZnjQF2KYWaFD2A8KyFBsrsfSjEmjn3RGWAIuvlneuZm3CUK3jbA==}
+    engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
+    peerDependencies:
+      eslint: ^6.0.0 || ^7.0.0 || >=8.0.0
+
+  '@eslint-community/eslint-utils@4.5.1':
+    resolution: {integrity: sha512-soEIOALTfTK6EjmKMMoLugwaP0rzkad90iIWd1hMO9ARkSAyjfMfkRRhLvD5qH7vvM0Cg72pieUfR6yh6XxC4w==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     peerDependencies:
       eslint: ^6.0.0 || ^7.0.0 || >=8.0.0
@@ -2360,6 +2366,11 @@ packages:
 
   acorn@8.14.0:
     resolution: {integrity: sha512-cl669nCJTZBsL97OF4kUQm5g5hC2uihk0NxY3WENAC0TYdILVkAyHymAntgxGkl7K+t0cXIrH5siy5S4XkFycA==}
+    engines: {node: '>=0.4.0'}
+    hasBin: true
+
+  acorn@8.14.1:
+    resolution: {integrity: sha512-OvQ/2pUDKmgfCg++xsTX1wGxfTaszcHVcTctW4UJB4hibJx2HXxxO5UmVgyjMa+ZDsiaf5wWLXYpRWMmBI0QHg==}
     engines: {node: '>=0.4.0'}
     hasBin: true
 
@@ -3427,8 +3438,8 @@ packages:
     resolution: {integrity: sha512-w9UMqWwJxHNOvoNzSJ2oPF5wvYcvP7jUvYzhp67yEhTi17ZDBBC1z9pTdGuzjD+EFIqLSYRweZjqfiPzQ06Ebg==}
     engines: {node: '>= 0.4'}
 
-  get-tsconfig@4.8.1:
-    resolution: {integrity: sha512-k9PN+cFBmaLWtVz29SkUoqU5O0slLuHJXt/2P+tMVFT+phsSGXGkp9t3rQIqdz0e+06EHNGs3oM6ZX1s2zHxRg==}
+  get-tsconfig@4.10.0:
+    resolution: {integrity: sha512-kGzZ3LWWQcGIAmg6iWvXn0ei6WDtV26wzHRMwDSzmAbcXrTEXxHy6IehI6/4eT6VRKyMP1eF1VqwrVUmE/LR7A==}
 
   glob-parent@5.1.2:
     resolution: {integrity: sha512-AOIgSQCepiJYwP3ARnGx+5VnTu2HBYdzbGP45eLw1vr3zB3vZLeyed1sC9hnbcOc9/SrMyM5RPQrkGz4aS9Zow==}
@@ -3576,8 +3587,8 @@ packages:
   immediate@3.0.6:
     resolution: {integrity: sha512-XXOFtyqDjNDAQxVfYxuF7g9Il/IbWmmlQg2MYKOH8ExIT1qg6xc4zyS3HaEEATgs1btfzxq15ciUiY7gjSXRGQ==}
 
-  immutable@5.0.3:
-    resolution: {integrity: sha512-P8IdPQHq3lA1xVeBRi5VPqUm5HDgKnx0Ru51wZz5mjxHr5n3RWhjIpOFU7ybkUxfB+5IToy+OLaHYDBIWsv+uw==}
+  immutable@5.1.0:
+    resolution: {integrity: sha512-L3LqPjnn4+m1ZNFBXo9QdXQhbfLwmcd+6IttT5hn821zDelhfaGLsVIEXJX0M5vJwc3NzA7zm1p5bFo8kDfn8A==}
 
   import-fresh@3.3.0:
     resolution: {integrity: sha512-veYYhQa+D1QBKznvhUHxb8faxlrwUnxseDAbAp457E0wLNio2bOSKnjYDhMj+YiAq61xrMGhQk9iXVk5FzgQMw==}
@@ -3655,6 +3666,10 @@ packages:
 
   is-core-module@2.16.0:
     resolution: {integrity: sha512-urTSINYfAYgcbLb0yDQ6egFm6h3Mo1DcF9EkyXSRjjzdHbsulg01qhwWuXdOoUBuTkbQ80KDboXa0vFJ+BDH+g==}
+    engines: {node: '>= 0.4'}
+
+  is-core-module@2.16.1:
+    resolution: {integrity: sha512-UfoeMA6fIJ8wTYFEUjelnaGI67v6+N7qXJEvQuIGa99l4xsCruSYOVSQ0uPANn4dAzm8lkYPaKLrrijLq7x23w==}
     engines: {node: '>= 0.4'}
 
   is-data-view@1.0.2:
@@ -4683,6 +4698,11 @@ packages:
   resolve-pkg-maps@1.0.0:
     resolution: {integrity: sha512-seS2Tj26TBVOC2NIc2rOe2y2ZO7efxITtLZcGSOnHHNOQ7CkiUBfw0Iw2ck6xkIhPwLhKNLS8BO+hEpngQlqzw==}
 
+  resolve@1.22.10:
+    resolution: {integrity: sha512-NPRy+/ncIMeDlTAsuqwKIiferiawhefFJtkNSW0qZJEqMEb+qBt/77B/jGeeek+F0uOeN05CDa6HXbbIgtVX4w==}
+    engines: {node: '>= 0.4'}
+    hasBin: true
+
   resolve@1.22.9:
     resolution: {integrity: sha512-QxrmX1DzraFIi9PxdG5VkRfRwIgjwyud+z/iBwfRRrVmHc+P9Q7u2lSSpQ6bjr2gy5lrqIiU9vb6iAeGf2400A==}
     hasBin: true
@@ -4772,8 +4792,8 @@ packages:
   safer-buffer@2.1.2:
     resolution: {integrity: sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg==}
 
-  sass@1.85.1:
-    resolution: {integrity: sha512-Uk8WpxM5v+0cMR0XjX9KfRIacmSG86RH4DCCZjLU2rFh5tyutt9siAXJ7G+YfxQ99Q6wrRMbMlVl6KqUms71ag==}
+  sass@1.86.0:
+    resolution: {integrity: sha512-zV8vGUld/+mP4KbMLJMX7TyGCuUp7hnkOScgCMsWuHtns8CWBoz+vmEhoGMXsaJrbUP8gj+F1dLvVe79sK8UdA==}
     engines: {node: '>=14.0.0'}
     hasBin: true
 
@@ -6875,6 +6895,11 @@ snapshots:
       eslint: 8.57.1
       eslint-visitor-keys: 3.4.3
 
+  '@eslint-community/eslint-utils@4.5.1(eslint@8.57.1)':
+    dependencies:
+      eslint: 8.57.1
+      eslint-visitor-keys: 3.4.3
+
   '@eslint-community/regexpp@4.12.1': {}
 
   '@eslint/eslintrc@2.1.4':
@@ -7731,9 +7756,9 @@ snapshots:
     optionalDependencies:
       react-dom: 18.3.1(react@18.3.1)
 
-  '@trpc-playground/html@1.0.4(@types/node@20.17.10)(sass@1.85.1)(terser@5.39.0)':
+  '@trpc-playground/html@1.0.4(@types/node@20.17.10)(sass@1.86.0)(terser@5.39.0)':
     dependencies:
-      vite: 4.5.9(@types/node@20.17.10)(sass@1.85.1)(terser@5.39.0)
+      vite: 4.5.9(@types/node@20.17.10)(sass@1.86.0)(terser@5.39.0)
       xss: 1.0.15
     transitivePeerDependencies:
       - '@types/node'
@@ -8024,7 +8049,7 @@ snapshots:
 
   '@ungap/structured-clone@1.2.1': {}
 
-  '@vitejs/plugin-legacy@4.1.1(terser@5.39.0)(vite@4.5.9(@types/node@20.17.10)(sass@1.85.1)(terser@5.39.0))':
+  '@vitejs/plugin-legacy@4.1.1(terser@5.39.0)(vite@4.5.9(@types/node@20.17.10)(sass@1.86.0)(terser@5.39.0))':
     dependencies:
       '@babel/core': 7.26.0
       '@babel/preset-env': 7.26.0(@babel/core@7.26.0)
@@ -8034,18 +8059,18 @@ snapshots:
       regenerator-runtime: 0.13.11
       systemjs: 6.15.1
       terser: 5.39.0
-      vite: 4.5.9(@types/node@20.17.10)(sass@1.85.1)(terser@5.39.0)
+      vite: 4.5.9(@types/node@20.17.10)(sass@1.86.0)(terser@5.39.0)
     transitivePeerDependencies:
       - supports-color
 
-  '@vitejs/plugin-react@4.3.4(vite@4.5.9(@types/node@20.17.10)(sass@1.85.1)(terser@5.39.0))':
+  '@vitejs/plugin-react@4.3.4(vite@4.5.9(@types/node@20.17.10)(sass@1.86.0)(terser@5.39.0))':
     dependencies:
       '@babel/core': 7.26.0
       '@babel/plugin-transform-react-jsx-self': 7.25.9(@babel/core@7.26.0)
       '@babel/plugin-transform-react-jsx-source': 7.25.9(@babel/core@7.26.0)
       '@types/babel__core': 7.20.5
       react-refresh: 0.14.2
-      vite: 4.5.9(@types/node@20.17.10)(sass@1.85.1)(terser@5.39.0)
+      vite: 4.5.9(@types/node@20.17.10)(sass@1.86.0)(terser@5.39.0)
     transitivePeerDependencies:
       - supports-color
 
@@ -8067,6 +8092,8 @@ snapshots:
       acorn: 8.14.0
 
   acorn@8.14.0: {}
+
+  acorn@8.14.1: {}
 
   agent-base@6.0.2:
     dependencies:
@@ -8987,7 +9014,7 @@ snapshots:
 
   eslint-plugin-es-x@7.8.0(eslint@8.57.1):
     dependencies:
-      '@eslint-community/eslint-utils': 4.4.1(eslint@8.57.1)
+      '@eslint-community/eslint-utils': 4.5.1(eslint@8.57.1)
       '@eslint-community/regexpp': 4.12.1
       eslint: 8.57.1
       eslint-compat-utils: 0.5.1(eslint@8.57.1)
@@ -9066,17 +9093,17 @@ snapshots:
 
   eslint-plugin-n@16.6.2(eslint@8.57.1):
     dependencies:
-      '@eslint-community/eslint-utils': 4.4.1(eslint@8.57.1)
+      '@eslint-community/eslint-utils': 4.5.1(eslint@8.57.1)
       builtins: 5.1.0
       eslint: 8.57.1
       eslint-plugin-es-x: 7.8.0(eslint@8.57.1)
-      get-tsconfig: 4.8.1
+      get-tsconfig: 4.10.0
       globals: 13.24.0
       ignore: 5.3.2
       is-builtin-module: 3.2.1
-      is-core-module: 2.16.0
+      is-core-module: 2.16.1
       minimatch: 3.1.2
-      resolve: 1.22.9
+      resolve: 1.22.10
       semver: 7.7.1
 
   eslint-plugin-node@11.1.0(eslint@8.57.1):
@@ -9418,7 +9445,7 @@ snapshots:
       es-errors: 1.3.0
       get-intrinsic: 1.2.6
 
-  get-tsconfig@4.8.1:
+  get-tsconfig@4.10.0:
     dependencies:
       resolve-pkg-maps: 1.0.0
 
@@ -9594,7 +9621,7 @@ snapshots:
 
   immediate@3.0.6: {}
 
-  immutable@5.0.3: {}
+  immutable@5.1.0: {}
 
   import-fresh@3.3.0:
     dependencies:
@@ -9664,6 +9691,10 @@ snapshots:
   is-callable@1.2.7: {}
 
   is-core-module@2.16.0:
+    dependencies:
+      hasown: 2.0.2
+
+  is-core-module@2.16.1:
     dependencies:
       hasown: 2.0.2
 
@@ -10830,6 +10861,12 @@ snapshots:
 
   resolve-pkg-maps@1.0.0: {}
 
+  resolve@1.22.10:
+    dependencies:
+      is-core-module: 2.16.1
+      path-parse: 1.0.7
+      supports-preserve-symlinks-flag: 1.0.0
+
   resolve@1.22.9:
     dependencies:
       is-core-module: 2.16.0
@@ -10949,10 +10986,10 @@ snapshots:
 
   safer-buffer@2.1.2: {}
 
-  sass@1.85.1:
+  sass@1.86.0:
     dependencies:
       chokidar: 4.0.3
-      immutable: 5.0.3
+      immutable: 5.1.0
       source-map-js: 1.2.1
     optionalDependencies:
       '@parcel/watcher': 2.5.1
@@ -11325,7 +11362,7 @@ snapshots:
   terser@5.39.0:
     dependencies:
       '@jridgewell/source-map': 0.3.6
-      acorn: 8.14.0
+      acorn: 8.14.1
       commander: 2.20.3
       source-map-support: 0.5.21
 
@@ -11349,9 +11386,9 @@ snapshots:
 
   triple-beam@1.4.1: {}
 
-  trpc-playground@1.0.4(@trpc/server@10.45.2)(@types/node@20.17.10)(express@4.21.2)(sass@1.85.1)(terser@5.39.0)(typescript@5.7.2)(zod@3.24.2):
+  trpc-playground@1.0.4(@trpc/server@10.45.2)(@types/node@20.17.10)(express@4.21.2)(sass@1.86.0)(terser@5.39.0)(typescript@5.7.2)(zod@3.24.2):
     dependencies:
-      '@trpc-playground/html': 1.0.4(@types/node@20.17.10)(sass@1.85.1)(terser@5.39.0)
+      '@trpc-playground/html': 1.0.4(@types/node@20.17.10)(sass@1.86.0)(terser@5.39.0)
       '@trpc-playground/types': 1.0.0(@trpc/server@10.45.2)(typescript@5.7.2)
       '@trpc/server': 10.45.2
       lodash: 4.17.21
@@ -11562,18 +11599,18 @@ snapshots:
 
   vary@1.1.2: {}
 
-  vite-plugin-svgr@3.3.0(rollup@4.34.9)(typescript@5.7.2)(vite@4.5.9(@types/node@20.17.10)(sass@1.85.1)(terser@5.39.0)):
+  vite-plugin-svgr@3.3.0(rollup@4.34.9)(typescript@5.7.2)(vite@4.5.9(@types/node@20.17.10)(sass@1.86.0)(terser@5.39.0)):
     dependencies:
       '@rollup/pluginutils': 5.1.4(rollup@4.34.9)
       '@svgr/core': 8.1.0(typescript@5.7.2)
       '@svgr/plugin-jsx': 8.1.0(@svgr/core@8.1.0(typescript@5.7.2))
-      vite: 4.5.9(@types/node@20.17.10)(sass@1.85.1)(terser@5.39.0)
+      vite: 4.5.9(@types/node@20.17.10)(sass@1.86.0)(terser@5.39.0)
     transitivePeerDependencies:
       - rollup
       - supports-color
       - typescript
 
-  vite@4.5.9(@types/node@20.17.10)(sass@1.85.1)(terser@5.39.0):
+  vite@4.5.9(@types/node@20.17.10)(sass@1.86.0)(terser@5.39.0):
     dependencies:
       esbuild: 0.18.20
       postcss: 8.5.3
@@ -11581,7 +11618,7 @@ snapshots:
     optionalDependencies:
       '@types/node': 20.17.10
       fsevents: 2.3.3
-      sass: 1.85.1
+      sass: 1.86.0
       terser: 5.39.0
 
   web-resource-inliner@6.0.1:

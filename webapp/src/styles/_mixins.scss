@@ -1,8 +1,8 @@
 // @use 'sass:math';
-@import './_vars';
-@import '../../node_modules/include-media/dist/_include-media';
+@use '_vars';
+@use '../../node_modules/include-media/dist/_include-media';
 
-@mixin link($color: $blue, $hoverColor: $red) {
+@mixin link($color: vars.$blue, $hoverColor: vars.$red) {
   color: $color;
   transition: color 200ms ease;
   background: none;
@@ -47,6 +47,12 @@
     height: $size;
     margin-left: math.div(-$size, 2);
     margin-top: math.div(-$size, 2);
+  }
+}
+
+@mixin media-960 {
+  @media (width <= 960px) {
+    @content;
   }
 }
 
