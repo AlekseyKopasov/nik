@@ -9,7 +9,7 @@ export const SignOutPage = () => {
   const trpcUtils = trpc.useUtils()
 
   useEffect(() => {
-    Cookies.remove('token')
+    Cookies.remove('token-ideanick')
     void trpcUtils.invalidate().then(() => {
       navigate(getSignInRoute())
     })

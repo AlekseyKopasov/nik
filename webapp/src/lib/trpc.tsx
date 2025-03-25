@@ -24,7 +24,7 @@ const trpcClient = trpc.createClient({
       url: env.VITE_BACKEND_TRPC_URL,
 
       headers: () => {
-        const token = Cookies.get('token')
+        const token = Cookies.get('token-ideanick')
         return {
           ...(token && { Authorization: `Bearer ${token}` }),
         }

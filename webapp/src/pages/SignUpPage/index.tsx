@@ -46,7 +46,7 @@ export const SignUpPage = () => {
       try {
         setSubmittingError(null)
         const { token } = await signUp.mutateAsync(values)
-        Cookies.set('token', token, { expires: 99999 })
+        Cookies.set('token-ideanick', token, { expires: 99999 })
         void trpcUtils.invalidate()
         navigate(getAllIdeasRoute())
       } catch (err: any) {
